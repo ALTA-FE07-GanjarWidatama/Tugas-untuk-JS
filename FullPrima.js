@@ -1,66 +1,44 @@
-// function FullPrima(n) {
-//     // your code here
-//     let bilanganPrima = 0;
-//     for(let i = 1; i <= n; i++){
-//     if(angka%i == 0)(
-//         pembagi ++
-//     )
-//   } 
-// }
-//   if(pembagi == 2){
-//     console.log(true);
-//   }else{
-//     console.log(false);
-//   }
-
-// let bilanganPrima = 81;
-// let factor = 0
-// i = 0
-// while (i < bilanganPrima){
-//     if (bilanganPrima%i==0){factor++;}
-//     if (i %2 == 0 ) continue;
-//     if (factor > 2) break;
-//     i++
-// }
-// if (factor > 2) {
-//     console.log("bukan bilangan prima");
-// } else {
-//     console.log("bilangan prima");
-// }
-
 function fullPrima(n) {
-    if (n <= 1) return false;
-  
-    for (let i = 2; i < n; i++) {
-      if (n % i == 0) return false;
+  // Your Code Here
+  if (n<10){
+    if (n==2 ||n==3 ||n==5 ||n==7) {
+      penentu= true;
+      return true
+    } else {
+      penentu= false;
+      return false
     }
-  
-    return true;
+  } else if (n>=10) {
+    let arrBil = n.toString().split("");
+    let a = arrBil[0];
+    let b = arrBil[1];
+    // let b = arrBill.slice (1,2);
+    if((a==2||a==3||a==5||a==7) && (b==2||b==3||b==5||b==7)){
+      penentu=true;
+      return true
+    } else {
+      penentu=false;
+      return false
+    }
   }
-  let bilangan = " ";
-  let arrBil = bilangan.toString().split("");
-  let prima = 0;
-  for (let i = 0; i < arrBil.length; i++) {
-    prima += fullPrima(parseInt(arrBil[i]));
-  }
-  prima += fullPrima(bilangan);
-  if (prima == arrBil.length + 1) {
-    console.log("Ya");
-  } else {
-    console.log("Tidak");
-  }{
-    return true
-  }
+}
 
+// algoritma
+/*    let penentu=true
+      if (n<10) maka (if (n=2,3,5,7) hasilnya/return true lalu else-nya hasilnya/return false)
+      else if (n>=10) maka let arrBil = n.toString().split("") // ini buat split dan jadiin array.
+      let a = arrBill.slice (0,1)
+      let b = arrBill.slice (1,2)
+      if (a=2,3,5,7 || b= 2,3,5,7) maka hasilnya true. Selain itu ya false lah
+      return penentu*/
 
-
-  console.log(FullPrima(2))  // true
-  console.log(FullPrima(3))  // true
-  console.log(FullPrima(11)) // false
-  console.log(FullPrima(13)) // false
-  console.log(FullPrima(23)) // true
-  console.log(FullPrima(29)) // false
-  console.log(FullPrima(37)) // true
-  console.log(FullPrima(41)) // false
-  console.log(FullPrima(43)) // false
-  console.log(FullPrima(53)) // true
+console.log(fullPrima(2)); // true
+console.log(fullPrima(3)); // true
+console.log(fullPrima(11)); // false
+console.log(fullPrima(13)); // false
+console.log(fullPrima(23)); // true
+console.log(fullPrima(29)); // false
+console.log(fullPrima(37)); // true
+console.log(fullPrima(41)); // false
+console.log(fullPrima(43)); // false
+console.log(fullPrima(53)); // true
